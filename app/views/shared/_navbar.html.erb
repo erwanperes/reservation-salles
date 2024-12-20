@@ -1,0 +1,12 @@
+<nav>
+  <a href="/">Home</a>
+  <% if user_signed_in? %>
+	<%= link_to "Main", main_path %>
+	<%= button_to "Déconnexion", 
+				  destroy_user_session_path, 
+				  method: :delete,
+				  form_class: "button-as-link"  %>
+  <% else %>
+	<%= button_to "Connexion", new_user_session_path, form_class: "button-as-link" %>
+  <% end %>
+</nav>
